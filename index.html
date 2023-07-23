@@ -1,0 +1,2600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+    }
+    
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: #F6DB93;
+      color: black;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 24px 24px 0;
+     }
+    
+    #myBtn:hover {
+      background-color: #555;
+    }
+    </style>
+  <title>Nespresso</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo/logo.png" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style-prefix.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+
+
+  <div class="overlay" data-overlay></div>
+
+
+    <button onclick="topFunction()" id="myBtn">
+      <img src="assets/images/icons/cappuccino-and-latte-vl.svg" style="display: inline-block; vertical-align: top;"> 
+      <div style="display:inline-block;">
+      <label id="message" style="width: 120px; display: inline-block;font-weight: bold;">Take Coffee <br> Quiz Now</label>
+      </div>
+    </button>
+
+  <!--- SUBSCRIPTION-->
+
+  <div class="modal" data-modal>
+
+    <div class="modal-close-overlay" data-modal-overlay></div>
+    <div class="modal-content">
+      <button class="modal-close-btn" data-modal-close>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+      <div class="newsletter-img">
+        <img src="./assets/images/nespresso.jpg" alt="subscribe newsletter" width="400" height="400">
+      </div>
+      <div class="newsletter">
+        <form action="#">
+          <div class="newsletter-header">
+            <h3 class="newsletter-title"> <img src="/assets/images/logo/logo.png" width="25%" height="25%" style="display: inline-block;"> SUBSCRIPTION </h3>
+            <p class="newsletter-desc">
+              Subscribe the <b>nespresso</b> to get latest products and discount update.
+            </p>
+          </div>
+
+          <input type="email" name="email" class="email-field" placeholder="email address" required>
+          <button type="submit" class="btn-newsletter">subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!--- NOTIFICATION TOAST-->
+
+  <div class="notification-toast" data-toast>
+
+    <button class="toast-close-btn" data-toast-close>
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+    <div class="toast-banner">
+      <img src="./assets/images/products/next-premium.jpg" alt="Vertuo Next Premium" width="80" height="70">
+    </div>
+    <div class="toast-detail">
+      <p class="toast-message">
+        someone in new just bought
+      </p>
+      <p class="toast-title">
+        Vertuo Next Premium
+      </p>
+      <p class="toast-meta">
+        <time datetime="pt2m">2 minutes</time> ago
+      </p>
+    </div>
+  </div>
+
+  <!--- HEADER -->
+  <header>
+
+    <div class="header-top">
+
+      <div class="container">
+
+        <ul class="header-social-container">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="header-alert-news">
+          <p>
+            <b>Free Shipping</b>
+            This Week Order Over - RM200
+          </p>
+        </div>
+
+        <div class="header-top-actions">
+
+          <select name="currency">
+
+            <option value="usd">USD &dollar;</option>
+            <option value="myr">MYR &dollar;</option>
+
+          </select>
+
+          <select name="language">
+
+            <option value="en-MY">English</option>
+            <option value="en-BM">Malay</option>
+            <option value="ch">&#20013;&#22269;</option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="header-main">
+
+      <div class="container">
+
+        <a href="#" class="header-logo">
+          <img src="./assets/images/logo/logo.png" alt="Nespresso's logo" width="120" height="36">
+        </a>
+
+        <div class="header-search-container">
+
+          <input type="search" name="search" class="search-field" placeholder="Enter your product name...">
+
+          <button class="search-btn">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+
+        </div>
+
+        <div class="header-user-actions">
+
+          <button class="action-btn">
+            <ion-icon name="person-outline"></ion-icon>
+          </button>
+
+          <button class="action-btn">
+            <ion-icon name="heart-outline"></ion-icon>
+            <span class="count">0</span>
+          </button>
+
+          <button class="action-btn">
+            <ion-icon name="bag-handle-outline"></ion-icon>
+            <span class="count">0</span>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <nav class="desktop-navigation-menu">
+
+      <div class="container">
+
+        <ul class="desktop-menu-category-list">
+
+          <li class="menu-category">
+            <a href="#" class="menu-title">Order</a>
+          </li>
+
+          <li class="menu-category">
+            <a href="#" class="menu-title">Coffee</a>
+
+            <div class="dropdown-panel">
+              <!-- Original -->
+              <ul class="dropdown-panel-list">
+                <li class="menu-title">
+                  <a href="#">Original</a>
+                </li>
+                <li class="panel-list-item">
+                  <a href="#">Summer Iced Coffee</a>
+                </li>
+                <li class="panel-list-item">
+                  <a href="#">Coffee Assortment Pack</a>
+                </li>
+                <li class="panel-list-item">
+                  <a href="#">Barista Creations</a>
+                </li>
+                <li class="panel-list-item">
+                  <a href="#">Ispirazione Italiana</a>
+                </li>
+                <li class="panel-list-item">
+                  <a href="#">World Explorations</a>
+                </li>
+                <li class="panel-list-item">
+                  <a href="#">The Original Collection</a>
+                </li>
+                <li class="panel-list-item">
+                  <a href="#">Master Origins</a>
+                </li>
+              </ul>
+              <!-- Vertuo -->
+              <ul class="dropdown-panel-list">
+                <li class="menu-title">
+                  <a href="#">Vertuo</a>
+                </li>
+                <li class="panel-list-item">
+                  <a href="#">Summer Iced Coffee</a>
+                </li>
+                <li class="panel-list-item">
+                  <a href="#">Espresso(40ml)</a>
+                </li>
+                <li class="panel-list-item">
+                  <a href="#">Double Espresso(80ml)</a>
+                </li>
+                <li class="panel-list-item">
+                  <a href="#">Gran Lungo (150ml)</a>
+                </li>
+                <li class="panel-list-item">
+                  <a href="#">Mug Size Coffee (230ml)</a>
+                </li>
+                <li class="panel-list-item">
+                  <a href="#">Alto & Carafe (355ml-535ml)</a>
+                </li>
+              </ul>
+              <!-- Machines -->
+              <ul class="dropdown-panel-list">
+                <li class="menu-title">
+                  <a href="#">Machines</a>
+                </li>
+                <li class="panel-list-item">
+                  <a href="#">Original</a>
+                </li>
+                <li class="panel-list-item">
+                  <a href="#">Vertuo</a>
+                </li>
+              </ul>
+              <!-- Accessories -->
+              <ul class="dropdown-panel-list">
+                <li class="menu-title">
+                  <a href="#">Accessories</a>
+                </li>
+                <li class="panel-list-item">
+                  <a href="#">Coffee Cups & Glasses</a>
+                </li>
+                <li class="panel-list-item">
+                  <a href="#">Travel Mug</a>
+                </li>
+                <li class="panel-list-item">
+                  <a href="#">Capsule Dispenser</a>
+                </li>
+                <li class="panel-list-item">
+                  <a href="#">Aeroccino Milk Frother</a>
+                </li>
+                <li class="panel-list-item">
+                  <a href="#">Machine Maintenance</a>
+                </li>
+                <li class="panel-list-item">
+                  <a href="#">Others
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="menu-category">
+            <a href="#" class="menu-title">Machines</a>
+            <ul class="dropdown-list">
+              <li class="dropdown-item">
+                <a href="#">Original</a>
+              </li>
+              <li class="dropdown-item">
+                <a href="#">Vertuo</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="menu-category">
+            <a href="#" class="menu-title">Accessories</a>
+
+            <ul class="dropdown-list">
+              <li class="dropdown-item">
+                <a href="#">Coffee Cups & Glasses</a>
+              </li>
+              <li class="dropdown-item">
+                <a href="#">Travel Mug</a>
+              </li>
+              <li class="dropdown-item">
+                <a href="#">Capsule Dispenser</a>
+              </li>
+              <li class="dropdown-item">
+                <a href="#">Aeroccino Milk Frother</a>
+              </li>
+              <li class="dropdown-item">
+                <a href="#">Machine Maintenance</a>
+              </li>
+              <li class="dropdown-item">
+                <a href="#">Others </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="menu-category">
+            <a href="#" class="menu-title">Offer</a>
+            <ul class="dropdown-list">
+              <li class="dropdown-item">
+                <a href="#">Latest News & Offers</a>
+              </li>
+              <li class="dropdown-item">
+                <a href="#">Welcome Offer for New Member</a>
+              </li>
+              <li class="dropdown-item">
+                <a href="#">Own a Machine for RM50</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="menu-category">
+            <a href="#" class="menu-title">Subscription</a>
+          </li>
+
+          <li class="menu-category">
+            <a href="#" class="menu-title">Experience</a>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+
+    <!-- <nav class="mobile-navigation-menu  has-scrollbar" data-mobile-menu>
+
+      <div class="menu-top">
+        <h2 class="menu-title">Menu</h2>
+
+        <button class="menu-close-btn" data-mobile-menu-close-btn>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </div>
+
+      <ul class="mobile-menu-category-list">
+
+        <li class="menu-category">
+          <a href="#" class="menu-title">Home</a>
+        </li>
+
+        <li class="menu-category">
+
+          <button class="accordion-menu" data-accordion-btn>
+            <p class="menu-title">Men's</p>
+
+            <div>
+              <ion-icon name="add-outline" class="add-icon"></ion-icon>
+              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+            </div>
+          </button>
+
+          <ul class="submenu-category-list" data-accordion>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Coffee</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Machines</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Accessories</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Offer</a>
+            </li>
+
+          </ul>
+
+        </li>
+
+        <li class="menu-category">
+
+          <button class="accordion-menu" data-accordion-btn>
+            <p class="menu-title">Women's</p>
+
+            <div>
+              <ion-icon name="add-outline" class="add-icon"></ion-icon>
+              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+            </div>
+          </button>
+
+          <ul class="submenu-category-list" data-accordion>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Dress & Frock</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Earrings</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Necklace</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Makeup Kit</a>
+            </li>
+
+          </ul>
+
+        </li>
+
+        <li class="menu-category">
+
+          <button class="accordion-menu" data-accordion-btn>
+            <p class="menu-title">Jewelry</p>
+
+            <div>
+              <ion-icon name="add-outline" class="add-icon"></ion-icon>
+              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+            </div>
+          </button>
+
+          <ul class="submenu-category-list" data-accordion>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Earrings</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Couple Rings</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Necklace</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Bracelets</a>
+            </li>
+
+          </ul>
+
+        </li>
+
+        <li class="menu-category">
+
+          <button class="accordion-menu" data-accordion-btn>
+            <p class="menu-title">Perfume</p>
+
+            <div>
+              <ion-icon name="add-outline" class="add-icon"></ion-icon>
+              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+            </div>
+          </button>
+
+          <ul class="submenu-category-list" data-accordion>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Clothes Perfume</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Deodorant</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Flower Fragrance</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Air Freshener</a>
+            </li>
+
+          </ul>
+
+        </li>
+
+        <li class="menu-category">
+          <a href="#" class="menu-title">Blog</a>
+        </li>
+
+        <li class="menu-category">
+          <a href="#" class="menu-title">Hot Offers</a>
+        </li>
+
+      </ul>
+
+      <div class="menu-bottom">
+
+        <ul class="menu-category-list">
+
+          <li class="menu-category">
+
+            <button class="accordion-menu" data-accordion-btn>
+              <p class="menu-title">Language</p>
+
+              <ion-icon name="caret-back-outline" class="caret-back"></ion-icon>
+            </button>
+
+            <ul class="submenu-category-list" data-accordion>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">English</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Espa&ntilde;ol</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Fren&ccedil;h</a>
+              </li>
+
+            </ul>
+
+          </li>
+
+          <li class="menu-category">
+            <button class="accordion-menu" data-accordion-btn>
+              <p class="menu-title">Currency</p>
+              <ion-icon name="caret-back-outline" class="caret-back"></ion-icon>
+            </button>
+
+            <ul class="submenu-category-list" data-accordion>
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">USD &dollar;</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">MYR &dollar;</a>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+
+        <ul class="menu-social-container">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </nav> -->
+  </header>
+
+
+  <!--- MAIN-->
+  <main>
+    <!--- BANNER-->
+    <div class="banner">
+      <div class="container">
+        <div class="slider-container has-scrollbar">
+          <div class="slider-item">
+            <img src="./assets/images/header.jpg" alt="Nespresso main banner" class="banner-img">
+            <div class="banner-content">
+              <p class="banner-subtitle">Trending item</p>
+              <h2 class="banner-title"></h2>
+              <p class="banner-text">
+                starting at RM <b>50</b>.00
+              </p>
+              <a href="#" class="banner-btn">Shop now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- CATEGORY-->
+    <div class="category">
+      <div class="container">
+        <div class="category-item-container has-scrollbar">
+          <div class="category-item">
+            <div class="category-img-box">
+              <img src="./assets/images/icons/coffee.jpg" alt="Coffee" width="30">
+            </div>
+            <div class="category-content-box">
+              <div class="category-content-flex">
+                <h3 class="category-item-title">Coffee</h3>
+                <p class="category-item-amount">(53)</p>
+              </div>
+              <a href="#" class="category-btn">Show all</a>
+            </div>
+          </div>
+
+          <div class="category-item">
+            <div class="category-img-box">
+              <img src="./assets/images/icons/coffee-machine.jpg" alt="coffee machine" width="30">
+            </div>
+            <div class="category-content-box">
+              <div class="category-content-flex">
+                <h3 class="category-item-title">Machines</h3>
+                <p class="category-item-amount">(58)</p>
+              </div>
+              <a href="#" class="category-btn">Show all</a>
+            </div>
+          </div>
+
+          <div class="category-item">
+            <div class="category-img-box">
+              <img src="./assets/images/icons/offers.jpg" alt="Offer" width="30">
+            </div>
+            <div class="category-content-box">
+              <div class="category-content-flex">
+                <h3 class="category-item-title">Offer</h3>
+                <p class="category-item-amount">(68)</p>
+              </div>
+              <a href="#" class="category-btn">Show all</a>
+            </div>
+          </div>
+
+          <div class="category-item">
+            <div class="category-img-box">
+              <img src="./assets/images/icons/accessories.jpg" alt="Accessories" width="30">
+            </div>
+            <div class="category-content-box">
+              <div class="category-content-flex">
+                <h3 class="category-item-title">Accessories</h3>
+                <p class="category-item-amount">(84)</p>
+              </div>
+              <a href="#" class="category-btn">Show all</a>
+            </div>
+          </div>
+
+          <div class="category-item">
+            <div class="category-img-box">
+              <img src="./assets/images/icons/coffee-recipes.jpg" alt="recipes" width="30">
+            </div>
+            <div class="category-content-box">
+              <div class="category-content-flex">
+                <h3 class="category-item-title">Coffee Recipes</h3>
+                <p class="category-item-amount">(35)</p>
+              </div>
+              <a href="#" class="category-btn">Show all</a>
+            </div>
+          </div>
+
+          <div class="category-item">
+            <div class="category-img-box">
+              <img src="./assets/images/icons/subscription.jpg" alt="subscription" width="30">
+            </div>
+            <div class="category-content-box">
+              <div class="category-content-flex">
+                <h3 class="category-item-title">Subscription</h3>
+              </div>
+              <a href="#" class="category-btn">Show all</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!--- PRODUCT-->
+
+    <div class="product-container">
+      <div class="container">
+        <!--- SIDEBAR-->
+        <div class="sidebar  has-scrollbar" data-mobile-menu>
+          <div class="sidebar-category">
+            <div class="sidebar-top">
+              <h2 class="sidebar-title">Category</h2>
+              <button class="sidebar-close-btn" data-mobile-menu-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+            </div>
+            <ul class="sidebar-menu-category-list">
+              <li class="sidebar-menu-category">
+                <button class="sidebar-accordion-menu" data-accordion-btn>
+                  <div class="menu-title-flex">
+                    <img src="./assets/images/icons/coffee.jpg" alt="coffee" width="20" height="20"
+                      class="menu-title-img">
+                    <p class="menu-title">Coffee</p>
+                  </div>
+                  <div>
+                    <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                  </div>
+
+                </button>
+
+                <ul class="sidebar-submenu-category-list" data-accordion>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Shirt</p>
+                      <data value="300" class="stock" title="Available Stock">300</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">shorts & jeans</p>
+                      <data value="60" class="stock" title="Available Stock">60</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">jacket</p>
+                      <data value="50" class="stock" title="Available Stock">50</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">dress & frock</p>
+                      <data value="87" class="stock" title="Available Stock">87</data>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li class="sidebar-menu-category">
+                <button class="sidebar-accordion-menu" data-accordion-btn>
+                  <div class="menu-title-flex">
+                    <img src="./assets/images/icons/coffee-machine.jpg" alt="Machines" class="menu-title-img" width="20"
+                      height="20">
+                    <p class="menu-title">Machines</p>
+                  </div>
+
+                  <div>
+                    <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                  </div>
+
+                </button>
+
+                <ul class="sidebar-submenu-category-list" data-accordion>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Sports</p>
+                      <data value="45" class="stock" title="Available Stock">45</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Formal</p>
+                      <data value="75" class="stock" title="Available Stock">75</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Casual</p>
+                      <data value="35" class="stock" title="Available Stock">35</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Safety Shoes</p>
+                      <data value="26" class="stock" title="Available Stock">26</data>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li class="sidebar-menu-category">
+                <button class="sidebar-accordion-menu" data-accordion-btn>
+
+                  <div class="menu-title-flex">
+                    <img src="./assets/images/icons/accessories.jpg" alt="Accessories" class="menu-title-img" width="20"
+                      height="20">
+                    <p class="menu-title">Accessories</p>
+                  </div>
+
+                  <div>
+                    <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                  </div>
+
+                </button>
+
+                <ul class="sidebar-submenu-category-list" data-accordion>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Earrings</p>
+                      <data value="46" class="stock" title="Available Stock">46</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Couple Rings</p>
+                      <data value="73" class="stock" title="Available Stock">73</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Necklace</p>
+                      <data value="61" class="stock" title="Available Stock">61</data>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li class="sidebar-menu-category">
+                <button class="sidebar-accordion-menu" data-accordion-btn>
+                  <div class="menu-title-flex">
+                    <img src="./assets/images/icons/perfume.svg" alt="perfume" class="menu-title-img" width="20"
+                      height="20">
+                    <p class="menu-title">Others</p>
+                  </div>
+
+                  <div>
+                    <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                  </div>
+
+                </button>
+
+                <ul class="sidebar-submenu-category-list" data-accordion>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Clothes Perfume</p>
+                      <data value="12" class="stock" title="Available Stock">12 pcs</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Deodorant</p>
+                      <data value="60" class="stock" title="Available Stock">60 pcs</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">jacket</p>
+                      <data value="50" class="stock" title="Available Stock">50 pcs</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">dress & frock</p>
+                      <data value="87" class="stock" title="Available Stock">87 pcs</data>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+            </ul>
+
+          </div>
+
+          <div class="product-showcase">
+            <h3 class="showcase-heading">Best sellers</h3>
+            <div class="showcase-wrapper">
+              <div class="showcase-container">
+                <div class="showcase">
+                  <a href="#" class="showcase-img-box">
+                    <img src="./assets/images/products/pixie-bundle.webp" alt="pixie-bundle" width="75" height="75"
+                      class="showcase-img">
+                  </a>
+                  <div class="showcase-content">
+                    <a href="#">
+                      <h4 class="showcase-title">Pixie Bundle</h4>
+                    </a>
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                    <div class="price-box">
+                      <del>MYR1,999.00</del>
+                      <p class="price">MYR849.00</p>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="showcase">
+
+                  <a href="#" class="showcase-img-box">
+                    <img src="./assets/images/products/Creatista Plus.webp" alt="Creatista Plus" class="showcase-img"
+                      width="75" height="75">
+                  </a>
+
+                  <div class="showcase-content">
+
+                    <a href="#">
+                      <h4 class="showcase-title">Creatista Plus</h4>
+                    </a>
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-half-outline"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <p class="price">MYR2,899.00</p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="showcase">
+
+                  <a href="#" class="showcase-img-box">
+                    <img src="./assets/images/products/versilo-capsule.webp" alt="Versilo Capsule Dispenser" class="showcase-img" width="75"
+                      height="75">
+                  </a>
+
+                  <div class="showcase-content">
+
+                    <a href="#">
+                      <h4 class="showcase-title">Versilo Capsule Dispenser</h4>
+                    </a>
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-half-outline"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <p class="price">MYR189.00</p>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="product-box">
+          <!--- PRODUCT MINIMAL-->
+          <div class="product-minimal">
+            <div class="product-showcase">
+              <h2 class="title">New Arrivals</h2>
+              <div class="showcase-wrapper has-scrollbar">
+                <div class="showcase-container">
+                  <div class="showcase">
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/cape-town-lungo-2x.webp" alt="Cape Town" width="70" class="showcase-img">
+                    </a>
+                    <div class="showcase-content">
+                      <a href="#">
+                        <h4 class="showcase-title">Cape Town Lungo</h4>
+                      </a>
+                      <a href="#" class="showcase-category">Coffee</a>
+                      <div class="price-box">
+                        <p class="price">MYR3.20</p>
+                        <del>MYR5.40</del>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="showcase">
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/arpeggio-2x.webp" alt="arpeggio-2x" class="showcase-img" width="70">
+                    </a>
+                    <div class="showcase-content">
+                      <a href="#">
+                        <h4 class="showcase-title">Arpeggio</h4>
+                      </a>
+                      <a href="#" class="showcase-category">Coffee</a>
+                      <div class="price-box">
+                        <p class="price">MYR2.40</p>
+                        <del>MYR5.80</del>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="showcase">
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/buenos-aires-lungo-2x.webp" alt="Buenos aires lungo" class="showcase-img"
+                        width="70">
+                    </a>
+                    <div class="showcase-content">
+                      <a href="#">
+                        <h4 class="showcase-title">Buenos Aires Lungo</h4>
+                      </a>
+                      <a href="#" class="showcase-category">Coffee</a>
+                      <div class="price-box">
+                        <p class="price">MYR2.70</p>
+                        <del>MYR3.95</del>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="showcase">
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/cosi-2x.webp" alt="Cosi" class="showcase-img"
+                        width="70">
+                    </a>
+                    <div class="showcase-content">
+                      <a href="#">
+                        <h4 class="showcase-title">Cosi</h4>
+                      </a>
+                      <a href="#" class="showcase-category">Coffee</a>
+                      <div class="price-box">
+                        <p class="price">MYR2.35</p>
+                        <del>MYR5.70</del>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               <div class="showcase-container"> 
+                  <div class="showcase">
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/delicato.webp" alt="delicato" class="showcase-img"
+                        width="70">
+                    </a>
+                    <div class="showcase-content">
+                      <a href="#">
+                        <h4 class="showcase-title">Delicato</h4>
+                      </a>
+                      <a href="#" class="showcase-category">Coffee</a>
+                      <div class="price-box">
+                        <p class="price">MYR3.40</p>
+                      </div>
+                    </div>
+                  </div>
+                
+                  <div class="showcase">
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/ethiopia-2x.webp" alt="Ethiopia" class="showcase-img"
+                        width="70">
+                    </a>     
+                    <div class="showcase-content">
+                      <a href="#">
+                        <h4 class="showcase-title">Ethiopia</h4>
+                      </a>
+                      <a href="#" class="showcase-category">Coffee</a>
+                      <div class="price-box">
+                        <p class="price">MYR3.50</p>
+                      </div>
+                    </div>
+                
+                  </div>
+                
+                  <div class="showcase">
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/buenos-aires-lungo-2x.webp" alt="Buenos aires lungo" class="showcase-img"
+                        width="70">
+                    </a>
+                    <div class="showcase-content">
+                      <a href="#">
+                        <h4 class="showcase-title">Buenos Aires Lungo</h4>
+                      </a>
+                      <a href="#" class="showcase-category">Coffee</a>
+                      <div class="price-box">
+                        <p class="price">MYR2.70</p>
+                        <del>MYR3.95</del>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="showcase">
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/cosi-2x.webp" alt="Cosi" class="showcase-img"
+                        width="70">
+                    </a>
+                    <div class="showcase-content">
+                      <a href="#">
+                        <h4 class="showcase-title">Cosi</h4>
+                      </a>
+                      <a href="#" class="showcase-category">Coffee</a>
+                      <div class="price-box">
+                        <p class="price">MYR2.35</p>
+                        <del>MYR5.70</del>
+                      </div>
+                    </div>
+                  </div>
+                
+                </div> 
+
+              </div>
+
+            </div>
+
+            <div class="product-showcase">
+              <h2 class="title">Trending</h2>
+              <div class="showcase-wrapper  has-scrollbar">
+
+                <div class="showcase-container"> 
+                  <div class="showcase">
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/delicato.webp" alt="delicato" class="showcase-img"
+                        width="70">
+                    </a>
+                    <div class="showcase-content">
+                      <a href="#">
+                        <h4 class="showcase-title">Delicato</h4>
+                      </a>
+                      <a href="#" class="showcase-category">Coffee</a>
+                      <div class="price-box">
+                        <p class="price">MYR3.40</p>
+                      </div>
+                    </div>
+                  </div>
+                
+                  <div class="showcase">
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/ethiopia-2x.webp" alt="Ethiopia" class="showcase-img"
+                        width="70">
+                    </a>     
+                    <div class="showcase-content">
+                      <a href="#">
+                        <h4 class="showcase-title">Ethiopia</h4>
+                      </a>
+                      <a href="#" class="showcase-category">Coffee</a>
+                      <div class="price-box">
+                        <p class="price">MYR3.50</p>
+                      </div>
+                    </div>
+                
+                  </div>
+                
+                  <div class="showcase">
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/buenos-aires-lungo-2x.webp" alt="Buenos aires lungo" class="showcase-img"
+                        width="70">
+                    </a>
+                    <div class="showcase-content">
+                      <a href="#">
+                        <h4 class="showcase-title">Buenos Aires Lungo</h4>
+                      </a>
+                      <a href="#" class="showcase-category">Coffee</a>
+                      <div class="price-box">
+                        <p class="price">MYR2.70</p>
+                        <del>MYR3.95</del>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="showcase">
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/cosi-2x.webp" alt="Cosi" class="showcase-img"
+                        width="70">
+                    </a>
+                    <div class="showcase-content">
+                      <a href="#">
+                        <h4 class="showcase-title">Cosi</h4>
+                      </a>
+                      <a href="#" class="showcase-category">Coffee</a>
+                      <div class="price-box">
+                        <p class="price">MYR2.35</p>
+                        <del>MYR5.70</del>
+                      </div>
+                    </div>
+                  </div>
+                
+                </div> 
+            
+              </div>
+            
+            </div>
+
+            <div class="product-showcase">
+            
+              <h2 class="title">Top Rated</h2>
+            
+              <div class="showcase-wrapper  has-scrollbar">
+            
+                <div class="showcase-container">
+                  <div class="showcase">
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/citiz.webp" alt="CitiZ" class="showcase-img"
+                        width="70">
+                    </a>
+                    <div class="showcase-content">
+                      <a href="#">
+                        <h4 class="showcase-title">CitiZ</h4>
+                      </a>
+                      <a href="#" class="showcase-category">Machines</a>
+                      <div class="price-box">
+                        <p class="price">MYR899.00</p>
+                        <del>MYR1,299.00</del>
+                      </div>
+                    </div>
+                  </div>
+            
+                  <div class="showcase">
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/next-premium.jpg" alt="Next Premium" class="showcase-img"
+                        width="70">
+                    </a>
+                    <div class="showcase-content">
+                      <a href="#">
+                        <h4 class="showcase-title">Next Premium</h4>
+                      </a>
+                      <a href="#" class="showcase-category">Machines</a>
+                      <div class="price-box">
+                        <p class="price">MYR1,799.00</p>
+                        <del>MYR2,999.00</del>
+                      </div>
+                    </div>
+                  </div>
+            
+                  <div class="showcase">
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/Creatista Plus.webp" alt="Creatista Plus" class="showcase-img"
+                        width="70">
+                    </a>
+                    <div class="showcase-content">
+                      <a href="#">
+                        <h4 class="showcase-title">Creatista Plus</h4>
+                      </a>
+                      <a href="#" class="showcase-category">Party wear</a>
+                      <div class="price-box">
+                        <p class="price">MYR2,899.00</p>
+                      </div>
+                    </div>
+                  </div>
+            
+                  <div class="showcase">
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/pixie-bundle.webp" alt="pixie-bundle" class="showcase-img"
+                        width="70">
+                    </a>
+            
+                    <div class="showcase-content">
+                      <a href="#">
+                        <h4 class="showcase-title">Pixie Bundle</h4>
+                      </a>
+                      <a href="#" class="showcase-category">Machines</a>
+                      <div class="price-box">
+                        <p class="price">MYR899.00</p>
+                        <del>MYR1,999.00</del>
+                      </div>
+                    </div>
+                  </div>
+            
+                </div>
+            
+              </div>
+            
+            </div>
+
+          </div>
+
+
+          <!--- PRODUCT FEATURED -->
+          <div class="product-featured">
+
+            <h2 class="title">Deal of the day</h2>
+
+            <div class="showcase-wrapper has-scrollbar">
+
+              <div class="showcase-container">
+
+                <div class="showcase">
+                  
+                  <div class="showcase-banner">
+                    <img src="./assets/images/products/Gran-Lattissima.webp" alt="Gran Lattissima" class="showcase-img">
+                  </div>
+
+                  <div class="showcase-content">
+                    
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <a href="#">
+                      <h3 class="showcase-title">Gran Lattissima</h3>
+                    </a>
+
+                    <p class="showcase-desc">
+                      Lorem ipsum dolor sit amet consectetur Lorem ipsum
+                      dolor dolor sit amet consectetur Lorem ipsum dolor
+                    </p>
+
+                    <div class="price-box">
+                      <p class="price">MYR2,399.00</p>
+
+                      <del>MYR1,699.00</del>
+                    </div>
+
+                    <button class="add-cart-btn">add to cart</button>
+
+                    <div class="showcase-status">
+                      <div class="wrapper">
+                        <p>
+                          already sold: <b>99</b>
+                        </p>
+
+                        <p>
+                          available: <b>100</b>
+                        </p>
+                      </div>
+
+                      <div class="showcase-status-bar"></div>
+                    </div>
+
+                    <div class="countdown-box">
+
+                      <p class="countdown-desc">
+                        Hurry Up! Offer ends in:
+                      </p>
+
+                      <div class="countdown">
+
+                        <div class="countdown-content">
+
+                          <p class="display-number">1</p>
+
+                          <p class="display-text">Days</p>
+
+                        </div>
+
+                        <div class="countdown-content">
+                          <p class="display-number">9</p>
+                          <p class="display-text">Hours</p>
+                        </div>
+
+                        <div class="countdown-content">
+                          <p class="display-number">23</p>
+                          <p class="display-text">Min</p>
+                        </div>
+
+                        <div class="countdown-content">
+                          <p class="display-number">15</p>
+                          <p class="display-text">Sec</p>
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="showcase-container">
+              
+                <div class="showcase">
+              
+                  <div class="showcase-banner">
+                    <img src="./assets/images/products/citiz.webp" alt="CitiZ" class="showcase-img">
+                  </div>
+              
+                  <div class="showcase-content">
+              
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+              
+                    <h3 class="showcase-title">
+                      <a href="#" class="showcase-title">CitiZ</a>
+                    </h3>
+              
+                    <p class="showcase-desc">
+                      Lorem ipsum dolor sit amet consectetur Lorem ipsum
+                      dolor dolor sit amet consectetur Lorem ipsum dolor
+                    </p>
+              
+                    <div class="price-box">
+                      <p class="price">MYR999.00</p>
+                      <del>MYR749.00</del>
+                    </div>
+              
+                    <button class="add-cart-btn">add to cart</button>
+              
+                    <div class="showcase-status">
+                      <div class="wrapper">
+                        <p> already sold: <b>59</b> </p>
+              
+                        <p> available: <b>100</b> </p>
+                      </div>
+              
+                      <div class="showcase-status-bar"></div>
+                    </div>
+              
+                    <div class="countdown-box">
+              
+                      <p class="countdown-desc">Hurry Up! Offer ends in:</p>
+              
+                      <div class="countdown">
+                        <div class="countdown-content">
+                          <p class="display-number">0</p>
+                          <p class="display-text">Days</p>
+                        </div>
+              
+                        <div class="countdown-content">
+                          <p class="display-number">12</p>
+                          <p class="display-text">Hours</p>
+                        </div>
+              
+                        <div class="countdown-content">
+                          <p class="display-number">32</p>
+                          <p class="display-text">Min</p>
+                        </div>
+              
+                        <div class="countdown-content">
+                          <p class="display-number">12</p>
+                          <p class="display-text">Sec</p>
+                        </div>
+                      </div>
+              
+                    </div>
+              
+                  </div>
+              
+                </div>
+              
+              </div>
+
+            </div>
+
+          </div>
+
+          <!--- PRODUCT GRID-->
+          <div class="product-main">
+
+            <h2 class="title">New Products</h2>
+
+            <div class="product-grid">
+
+              <div class="showcase">
+
+                <div class="showcase-banner">
+
+                  <img src="./assets/images/products/arpeggio-2x.webp" alt="Arpeggio" width="300" class="product-img default">
+                  <img src="./assets/images/products/arpeggio-2x.webp" alt="cioccolatino" width="300" class="product-img hover">
+
+                  <p class="showcase-badge">15%</p>
+
+                  <div class="showcase-actions">
+
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+
+                  </div>
+
+                </div>
+
+                <div class="showcase-content">
+
+                  <a href="#" class="showcase-category">Arpeggio</a>
+
+                  <a href="#">
+                    <h3 class="showcase-title">A short-roasted coffee with cocoa notes</h3>
+                  </a>
+
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <p class="price">MYR2.40</p>
+                    <del>MYR5.80</del>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="showcase">
+              
+                <div class="showcase-banner">
+                  <img src="./assets/images/products/ristreto-decad.webp" alt="Ristreto Decaffeine" class="product-img default"
+                    width="300">
+                  <img src="./assets/images/products/ristreto-decad.webp" alt="Ristreto Decaffeine" class="product-img hover"
+                    width="300">
+              
+                  <p class="showcase-badge angle black">sale</p>
+              
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+              
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">Ristreto <p style="font-weight: bold;color: red;">DECAFFEINATO</p> </a>
+              
+                  <h3>
+                    <a href="#" class="showcase-title">A decaffeinated intense coffee with subtle fruity notes</a>
+                  </h3>
+              
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+              
+                  <div class="price-box">
+                    <p class="price">MYR3.20</p>
+                    <del>MYR5.00</del>
+                  </div>
+              
+                </div>
+              
+              </div>
+
+              <div class="showcase">
+              
+                <div class="showcase-banner">
+                  <img src="./assets/images/products/buenos-aires-lungo-2x.webp" alt="BUENOS AIRES LUNGO" class="product-img default"
+                    width="300">
+                  <img src="./assets/images/products/buenos-aires-lungo-2x.webp" alt="BUENOS AIRES LUNGO" class="product-img hover"
+                    width="300">
+              
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+              
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">Buenos Aires Lungo</a>
+              
+                  <h3>
+                    <a href="#" class="showcase-title">A mild and sweet coffee</a>
+                  </h3>
+              
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+              
+                  <div class="price-box">
+                    <p class="price">MYR2.70</p>
+                    <del>MYR3.95</del>
+                  </div>
+              
+                </div>
+              
+              </div>
+
+              <div class="showcase">
+              
+                <div class="showcase-banner">
+                  <img src="./assets/images/products/cape-town-lungo-2x.webp" alt="Cape Town Lungo" class="product-img default"
+                    width="300">
+                  <img src="./assets/images/products/cape-town-lungo-2x.webp" alt="Cape Town Lungo" class="product-img hover"
+                    width="300">
+              
+                  <p class="showcase-badge angle pink">new</p>
+              
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+              
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">Cape Town Lungo</a>
+              
+                  <h3>
+                    <a href="#" class="showcase-title">A deep-roasted long coffee with woodsy notes</a>
+                  </h3>
+              
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+              
+                  <div class="price-box">
+                    <p class="price">MYR3.20</p>
+                    <del>MYR5.40</del>
+                  </div>
+              
+                </div>
+              
+              </div>
+
+              <div class="showcase">
+              
+                <div class="showcase-banner">
+                  <img src="./assets/images/products/nicaragua-2x.webp" alt="nicaragua-2x" class="product-img default"
+                    width="300">
+                  <img src="./assets/images/products/nicaragua-2x.webp" alt="nicaragua-2x" class="product-img hover"
+                    width="300">
+              
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+              
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">Nicaragua</a>
+              
+                  <h3>
+                    <a href="#" class="showcase-title">Black honey processed arabica beans with sweet honey notes</a>
+                  </h3>
+              
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+              
+                  <div class="price-box">
+                    <p class="price">MYR3.15</p>
+                    <del>MYR5.90</del>
+                  </div>
+              
+                </div>
+              
+              </div>
+
+              <div class="showcase">
+              
+                <div class="showcase-banner">
+                  <img src="./assets/images/products/india-2x.webp" alt="India" class="product-img default"
+                    width="300">
+                  <img src="./assets/images/products/india-2x.webp" alt="India" class="product-img hover"
+                    width="300">
+              
+                  <p class="showcase-badge angle black">sale</p>
+              
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+              
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">India</a>
+              
+                  <h3>
+                    <a href="#" class="showcase-title">Monsoon robusta beans with spicy notes</a>
+                  </h3>
+              
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+              
+                  <div class="price-box">
+                    <p class="price">MYR2.50</p>
+                    <del>MYR5.10</del>
+                  </div>
+              
+                </div>
+              
+              </div>
+
+              <div class="showcase">
+              
+                <div class="showcase-banner">
+                  <img src="./assets/images/products/indonesia-2x.webp" alt="Indonesia" class="product-img default"
+                    width="300">
+                  <img src="./assets/images/products/indonesia-2x.webp" alt="Indonesia" class="product-img hover" width="300">
+              
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+              
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">Indonesia</a>
+              
+                  <h3>
+                    <a href="#" class="showcase-title">Wet-hulled arabica beans with woody notes</a>
+                  </h3>
+              
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+              
+                  <div class="price-box">
+                    <p class="price">MYR3.25</p>
+                    <del>MYR5.68</del>
+                  </div>
+              
+                </div>
+              
+              </div>
+
+              <div class="showcase">
+              
+                <div class="showcase-banner">
+                  <img src="./assets/images/products/peru-organic-2x.webp" alt="Peru" class="product-img default"
+                    width="300">
+                  <img src="./assets/images/products/peru-organic-2x.webp" alt="Peru" class="product-img hover"
+                    width="300">
+              
+                  <p class="showcase-badge angle black">sale</p>
+              
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+              
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">Peru Organic Limited Edition</a>
+              
+                  <h3>
+                    <a href="#" class="showcase-title">An elegant and fruity coffee accented by a smooth toasted cereal note</a>
+                  </h3>
+              
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+              
+                  <div class="price-box">
+                    <p class="price">MYR3.45</p>
+                    <del>MYR5.67</del>
+                  </div>
+              
+                </div>
+              
+              </div>
+
+              <div class="showcase">
+              
+                <div class="showcase-banner">
+                  <img src="./assets/images/products/citiz.webp" alt="CitiZ" class="product-img default"
+                    width="300">
+                  <img src="./assets/images/products/citiz.webp" alt="CitiZ" class="product-img hover"
+                    width="300">
+              
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+              
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">Citiz</a>
+              
+                  <h3>
+                    <a href="#" class="showcase-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
+                  </h3>
+              
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+              
+                  <div class="price-box">
+                    <p class="price">MYR899.00</p>
+                    <del>MY1299.00</del>
+                  </div>
+              
+                </div>
+              
+              </div>
+
+              <div class="showcase">
+              
+                <div class="showcase-banner">
+                  <img src="./assets/images/products/next-premium.jpg" alt="Creatista Plus" class="product-img default"
+                    width="300">
+                  <img src="./assets/images/products/next-premium.jpg" alt="Creatista Plus" class="product-img hover"
+                  width="300">
+              
+                  <p class="showcase-badge angle black">sale</p>
+              
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+              
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">Creatista Plus</a>
+              
+                  <h3>
+                    <a href="#" class="showcase-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
+                  </h3>
+              
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+              
+                  <div class="price-box">
+                    <p class="price">MYR999.00</p>
+                  </div>
+              
+                </div>
+              
+              </div>
+
+              <div class="showcase">
+              
+                <div class="showcase-banner">
+                  <img src="./assets/images/products/Gran-Lattissima.webp" alt="Gran Lattissima" class="product-img default"
+                    width="300">
+                  <img src="./assets/images/products/Gran-Lattissima.webp" alt="Gran Lattissima" class="product-img hover"
+                    width="300">
+              
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+              
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">Gran Lattissima</a>
+              
+                  <h3>
+                    <a href="#" class="showcase-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
+                  </h3>
+              
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+              
+                  <div class="price-box">
+                    <p class="price">MYR1,199.00</p>
+                  </div>
+              
+                </div>
+              
+              </div>
+
+              <div class="showcase">
+              
+                <div class="showcase-banner">
+                  <img src="./assets/images/products/next-premium.jpg" alt="Next Premium"
+                    class="product-img default" width="300">
+                  <img src="./assets/images/products/next-premium.jpg" alt="Next Premium"
+                    class="product-img hover" width="300">
+              
+                  <p class="showcase-badge angle black">sale</p>
+              
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+              
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">Next Premium</a>
+              
+                  <h3>
+                    <a href="#" class="showcase-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
+                  </h3>
+              
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+              
+                  <div class="price-box">
+                    <p class="price">MYR1,799.00</p>
+                    <del>MYR2,999.00</del>
+                  </div>
+              
+                </div>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--TESTIMONIALS, CTA & SERVICE-->
+    <div>
+
+      <div class="container">
+
+        <div class="testimonials-box">
+
+          <!--- TESTIMONIALS -->
+
+          <div class="testimonial">
+
+            <h2 class="title">Testimonial</h2>
+
+            <div class="testimonial-card">
+
+              <img src="./assets/images/testimonial-1.jpg" alt="Merry Diana" class="testimonial-banner" width="80" height="80">
+
+              <p class="testimonial-name">Merry Diana</p>
+
+              <p class="testimonial-title">Lorem Ipsum</p>
+
+              <img src="./assets/images/icons/quotes.svg" alt="quotation" class="quotation-img" width="26">
+
+              <p class="testimonial-desc">
+                Lorem ipsum dolor sit amet consectetur Lorem ipsum
+                dolor dolor sit amet.
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          <!--CTA-->
+
+          <div class="cta-container">
+
+            <img src="./assets/images/products/summer.webp" alt="summer collection" class="cta-banner">
+
+            <a href="#" class="cta-content">
+
+              <p class="discount">25% Discount</p>
+
+              <h2 class="cta-title">Summer collection</h2>
+
+              <p class="cta-text">Starting @ RM2</p>
+
+              <button class="cta-btn">Shop now</button>
+
+            </a>
+
+          </div>
+
+
+
+          <!-- SERVICE-->
+
+          <div class="service">
+
+            <h2 class="title">Our Services</h2>
+
+            <div class="service-container">
+
+              <a href="#" class="service-item">
+
+                <div class="service-icon">
+                  <ion-icon name="boat-outline"></ion-icon>
+                </div>
+
+                <div class="service-content">
+
+                  <h3 class="service-title">Worldwide Delivery</h3>
+                  <p class="service-desc">For Order Over MYR200</p>
+
+                </div>
+
+              </a>
+
+              <a href="#" class="service-item">
+              
+                <div class="service-icon">
+                  <ion-icon name="rocket-outline"></ion-icon>
+                </div>
+              
+                <div class="service-content">
+              
+                  <h3 class="service-title">Next Day delivery</h3>
+                  <p class="service-desc">UK Orders Only</p>
+              
+                </div>
+              
+              </a>
+
+              <a href="#" class="service-item">
+              
+                <div class="service-icon">
+                  <ion-icon name="call-outline"></ion-icon>
+                </div>
+              
+                <div class="service-content">
+              
+                  <h3 class="service-title">Best Online Support</h3>
+                  <p class="service-desc">Hours: 8AM - 11PM</p>
+              
+                </div>
+              
+              </a>
+
+              <a href="#" class="service-item">
+              
+                <div class="service-icon">
+                  <ion-icon name="arrow-undo-outline"></ion-icon>
+                </div>
+              
+                <div class="service-content">
+              
+                  <h3 class="service-title">Return Policy</h3>
+                  <p class="service-desc">Easy & Free Return</p>
+              
+                </div>
+              
+              </a>
+
+              <a href="#" class="service-item">
+              
+                <div class="service-icon">
+                  <ion-icon name="ticket-outline"></ion-icon>
+                </div>
+              
+                <div class="service-content">
+              
+                  <h3 class="service-title">30% money back</h3>
+                  <p class="service-desc">For Order Over $100</p>
+              
+                </div>
+              
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!--FOOTER-->
+  <footer>
+
+    <div class="footer-category">
+
+      <div class="container">
+
+        <h2 class="footer-category-title">Brand directory</h2>
+
+        <div class="footer-category-box">
+          <h3 class="category-box-title">Coffee :</h3>
+          <a href="#" class="footer-category-link">Summer Iced Coffee</a>
+          <a href="#" class="footer-category-link">Coffee Assortment Pack</a>
+          <a href="#" class="footer-category-link">Barista Creations</a>
+          <a href="#" class="footer-category-link">Ispirazione Italiana</a>
+          <a href="#" class="footer-category-link">World Explorations</a>
+          <a href="#" class="footer-category-link">The Original Collection</a>
+          <a href="#" class="footer-category-link">Master Origins</a>
+        </div>
+
+        <div class="footer-category-box">
+          <h3 class="category-box-title">Machines :</h3>
+          <a href="#" class="footer-category-link">Original</a>
+          <a href="#" class="footer-category-link">Vertuo</a>
+        </div>
+
+        <div class="footer-category-box">
+          <h3 class="category-box-title">Accessories :</h3>
+          <a href="#" class="footer-category-link">Coffee Cups & Glasses</a>
+          <a href="#" class="footer-category-link">Travel Mug</a>
+          <a href="#" class="footer-category-link">Capsule Dispenser</a>
+          <a href="#" class="footer-category-link">Aeroccino Milk Frother</a>
+          <a href="#" class="footer-category-link">Machine Maintenance</a>
+          <a href="#" class="footer-category-link">Others</a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer-nav">
+      <div class="container">
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Popular Categories</h2>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Coffee</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Machines</a>
+          </li>
+        </ul>
+
+        <ul class="footer-nav-list">
+        
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Products</h2>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Prices drop</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">New products</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Best sales</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Contact us</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Sitemap</a>
+          </li>
+        
+        </ul>
+
+        <ul class="footer-nav-list">
+        
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Our Company</h2>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Delivery</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Legal Notice</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Terms and conditions</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">About us</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Secure payment</a>
+          </li>
+        
+        </ul>
+
+        <ul class="footer-nav-list">
+        
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Services</h2>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Prices drop</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">New products</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Best sales</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Contact us</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Sitemap</a>
+          </li>
+        
+        </ul>
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Contact</h2>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <address class="content">
+              Lot GK106, 1 Utama Shopping Centre, Ground Floor
+              47800 Petaling Jaya
+              Tel. 1234-56-7891
+            </address>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="call-outline"></ion-icon>
+            </div>
+
+            <a href="tel:+607936-8058" class="footer-nav-link">1234-56-7891</a>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <a href="mailto:example@gmail.com" class="footer-nav-link">example@gmail.com</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Follow Us</h2>
+          </li>
+
+          <li>
+            <ul class="social-link">
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <div class="container">
+
+        <img src="./assets/images/payment.png" alt="payment method" class="payment-img">
+
+        <p class="copyright">
+          Copyright &copy; <a href="#">Anon</a> all rights reserved.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!--- custom js link -->
+  <script src="./assets/js/script.js"></script>
+  <!--- ionicon link-->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    // original position
+    let previousScrollPosition = 0;
+    let mybutton = document.getElementById("myBtn");
+    let mess = document.getElementById("message");
+    
+    // 5seconds after website load
+    // show floating button with message
+    firstInterval = setInterval(displays, 5000);
+    function displays() {
+      mess.style.display = "block";
+      mybutton.style.display = "block";
+    }
+    // scrolling
+    const isScrollingDown = () => {
+      let goingDown = false;
+
+      let scrollPosition = window.pageYOffset;
+
+      if (scrollPosition > previousScrollPosition) {
+        goingDown = true;
+      }
+
+      previousScrollPosition = scrollPosition;
+
+      return goingDown;
+    };
+    // scroll down FAB minimize
+    // scroll up FAB expand
+    const handleScroll = () => {
+      if (isScrollingDown()) {
+        mybutton.style.display = "block";
+        mess.style.display = "none";
+        clearInterval(firstInterval);
+      } else {
+        mess.style.display = "block";
+        mybutton.style.display = "block";
+      }
+    };
+
+  window.addEventListener("scroll", handleScroll);
+  </script>
+</body>
+
+</html>
